@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 #importando a tabela com o pandas
-tabela = pd.read_csv('planinhaTestes.csv', delimiter=',', names = ['Data', 'Maxima', 'Minima', 'Media'])
+tabela = pd.read_csv('vazoes_C_60855000.csv', delimiter=',', names = ['Data', 'Maxima', 'Minima', 'Media'])
 
 #vetor p/ armazenar datas
 vetDatas = ["" for x in range(13)]
@@ -17,19 +17,11 @@ aux = 0
 
 # preenchendo o vetor de datas
 for i, j in tabela.iterrows():
-    if i >= 23 and i <=34:
+    if i >= 52 and i <=63:
         aux = aux + 1
         #print("Linha = ",i, "\n",j['Data'])
         vetDatas[aux] = j['Data']
-        #print()
-
-aux = 0
-
-# preenchendo o vetor de Medias
-for i, j in tabela.iterrows():
-    if i >= 23 and i <=34:
-        aux = aux + 1
-        #print("Linha = ",i, "\n",j['Media'])
+        # print("Linha = ",i, "\n",j['Media'])
         vetMedias[aux] = j['Media']
         #print()
 
