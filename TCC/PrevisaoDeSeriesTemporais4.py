@@ -22,13 +22,20 @@ test = colunaMedia.iloc[49:63]
 #Separando as entradas e saidas do treinamento da rede...
 inicio = 0
 fim = 12
+mat = [[0 for j in range(12)] for j in range(5)]
 for i in range(5): #quantos meses vae ser pegos
-    training_input = np.append(training.iloc[inicio:fim],[])
-    #print("\n", training_input) #print to check
+    #training_input = np.append([[i,i+1]], [[i,+1]], axis=0)
+
+    #training_input = np.matrix(training_input)
+    training_input = np.append(training.iloc[inicio:fim], [])
+    print("\n", training_input) #print to check
+    mat[i]=training_input
     training_output = np.append(training.iloc[fim],[])
-    #print("\n", training_output) #print to check
+    print("\n", training_output) #print to check
     inicio = inicio+1
     fim = fim+1
+
+print(mat)
 
 #Separando as entradas e saidas do teste da rede...
 inicio = 0
@@ -41,7 +48,7 @@ for i in range(2): #quantos meses vae ser pegos
     inicio = inicio+1
     fim = fim+1
 
-class Net(tc.nn.Module):
+'''class Net(tc.nn.Module):
     def __init__(self, input_size, hidden_size):
         super(Net, self).__init__()
         self.input_size = input_size
@@ -70,4 +77,4 @@ optimizer = tc.optim.SGD(model.parameters(), lr = 0.9, momentum=0.2)
 model.eval()
 y_pred = model(test_input)
 before_train = criterion(y_pred.squeeze(), test_output)
-print('Test loss before training' , before_train.item())
+print('Test loss before training' , before_train.item())'''
