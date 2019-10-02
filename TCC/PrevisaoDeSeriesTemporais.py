@@ -50,7 +50,7 @@ print("\n", training_output1)
 print("\nEntrada --> ", training_input1[0]) #Imprimindo toda a linha da matriz
 print("Saida --> ", training_output1[0].Media) #imprimindo o primeiro valor do resultado da primeira entrada.
 
-'''class Net(torch.nn.Module):
+class Net(torch.nn.Module):
     def __init__(self, input_size, hidden_size):
         super(Net, self).__init__()
         self.input_size = input_size
@@ -98,4 +98,5 @@ for epoch in range(epochs):
     print('Epoch {}: train loss: {}'.format(epoch, loss.item()))
     # Backward pass
     loss.backward()
-    optimizer.step()'''
+    optimizer.step()
+
